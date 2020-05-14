@@ -1,0 +1,14 @@
+<!-- all.html -->
+{% extends 'base.html' %}
+
+{% block subtitle %}All the things{% endblock subtitle %}
+
+{% block content %}
+<ul>
+    {% for task in tasks %}
+    <li>
+        {{ task.name }} {% if task.performed %}Done on {{ task.performed }} by {{ task.performed_by.name }}{% else %} Undone {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}
